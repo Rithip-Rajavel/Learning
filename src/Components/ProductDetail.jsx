@@ -1,5 +1,5 @@
 import React from 'react'
-
+//import PropTypes from 'prop-types'
 const ProductDetail = ({ deepName, deepPrice, deepDescription }) => {
   console.log(deepName, deepPrice, deepDescription);
   return (
