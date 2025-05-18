@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
+import Shop from "./Shop";
 
 let handingStyle = {
   backgroundColor: "red",
@@ -35,7 +37,7 @@ function Content() {
   const [name, setName] = useState("Archana");
   return (
     <main>
-      <h1 style={handingStyle}>Main Content-{name}</h1>
+      {/* <h1 style={handingStyle}>Main Content-{name}</h1>
       <Button onClick={() => HandleButton(setName)}>Click me</Button>
       <Button
         onClick={() => {
@@ -48,7 +50,9 @@ function Content() {
           setName("Archana");
         }}>
         reset
-      </Button>
+      </Button> */}
+
+      <Shop />
     </main>
   );
 }

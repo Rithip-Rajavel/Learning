@@ -7,10 +7,11 @@ Counter;
 function App() {
   return (
     <div className="App">
-      {/* <Header props={correct}/>
+      {/* <Header />
       <Content />
       <Footer props = "hello"/> */}
-      <Counter />
+      {/* <Counter /> */}
+      <Content />
     </div>
   );
 }
