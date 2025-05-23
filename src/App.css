@@ -43,7 +43,10 @@
 section{
   border: 1px solid white;
   width:70%;
-  height:150px;
+  height:max-content;
   margin:auto;
   text-align: center;
+}
+main ul{
+  list-style: none;
 }

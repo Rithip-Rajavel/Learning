@@ -35,6 +35,13 @@ function HandleButton1(name) {
 
 function Content() {
   const [name, setName] = useState("Archana");
+
+  const [items, setItems] = useState([
+    { id: 1, label: "HTML & CSS", checked: true },
+    { id: 2, label: "JavaSript", checked: true },
+    { id: 3, label: "React", checked: false },
+    { id: 4, label: "Nodejs", checked: false },
+  ]);
   return (
     <main>
       {/* <h1 style={handingStyle}>Main Content-{name}</h1>
@@ -52,7 +59,18 @@ function Content() {
         reset
       </Button> */}
 
-      <Shop />
+      {/* <Shop /> */}
+      <ul>
+        {items.map((item) => {
+          return (
+            <li key={item.id}>
+              <input type="checkBox" checked={item.checked}/>
+              <label>{item.label}</label>
+              <button>Delete</button>
+            </li>
+          );
+        })}
+      </ul>
     </main>
   );
 }
