@@ -1,20 +1,23 @@
-import React, { useContext } from "react";
-//import PropTypes from 'prop-types'
+import React from "react";
+import { useParams } from "react-router-dom";
 
-import { userContext } from "../App";
+const ProductDetail = ({ products }) => {
+  const { productId } = useParams();
+  const product = products.find((p) => p.id === parseInt(productId));
 
-// eslint-disable-next-line no-unused-vars
-const ProductDetail = ({ deepName, deepPrice, deepDescription }) => {
-  //   console.log(deepName, deepPrice, deepDescription);
+  if (!product) {
+    return <p>Product not found.</p>;
+  }
 
-  const received = useContext(userContext);
   return (
     <div>
-      <section>
-        <h3>Price: ${deepPrice}</h3>
-        <h3>Name: {received.uName}</h3>
-        <p>Description: {deepDescription}</p>
-      </section>
+      <h3>{product.name}</h3>
+      <p>
+        <strong>Price:</strong> ${product.price}
+      </p>
+      <p>
+        <strong>Description:</strong> {product.description}
+      </p>
     </div>
   );
 };

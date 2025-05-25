@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import Shop from "./Shop";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
@@ -37,7 +36,7 @@ function HandleButton1(name) {
   console.log(name);
 }
 
-function Content() {
+function Todoapp() {
   const [name, setName] = useState("Archana");
   const [items, setItems] = useState([
     { id: 1, label: "HTML & CSS", checked: true },
@@ -155,4 +154,4 @@ function Content() {
   );
 }
 
-export default Content;
+export default Todoapp;

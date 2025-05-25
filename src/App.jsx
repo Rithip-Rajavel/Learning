@@ -1,31 +1,55 @@
-/* eslint-disable no-unused-vars */
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import "./App.css";
-import Content from "./Components/Content";
-import Counter from "./Components/Counter";
-import { createContext, useState } from "react";
+import Home from "./Components/Home";
+import Login from "./Components/Login";
+import SignUp from "./Components/SignUp";
+import Products from "./Components/Products";
+import ProductList from "./Components/ProductList";
+import ProductDetail from "./Components/ProductDetail";
+import Todoapp from "./Components/Todoapp";
 
-export const userContext = createContext();
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+
 function App() {
-  const [user, setUser] = useState({
-    uName: "rithip",
-    age: "35",
-    email: "abc@gmail.com",
-  });
-
-
-  //console.log(userContext)
+  const [products, setProducts] = useState([
+    {
+      id: 1,
+      name: "Laptop",
+      price: 999,
+      description: "A high-performance laptop.",
+    },
+    {
+      id: 2,
+      name: "Phone",
+      price: 699,
+      description: "A powerful smartphone.",
+    },
+    {
+      id: 3,
+      name: "Headphones",
+      price: 199,
+      description: "Noise-cancelling headphones.",
+    },
+  ]);
 
   return (
-    <userContext.Provider value = {user}>
-      <div className="App">
-        <Header />
-        <Content />
-        <Footer props="hello" />
-        {/* <Counter /> */}
-      </div>
-    </userContext.Provider>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products products={products} />}>
+            <Route index element={<ProductList products={products} />} />
+            <Route
+              path=":productId"
+              element={<ProductDetail products={products} />}
+            />
+          </Route>
+          <Route path="/login/:newUser" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/todo" element={<Todoapp />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
