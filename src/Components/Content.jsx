@@ -6,7 +6,8 @@ import Shop from "./Shop";
 import { FaTrashCan } from "react-icons/fa6";
 import { FaEdit } from "react-icons/fa";
 import { IoIosAddCircle } from "react-icons/io";
-
+import { IoMdSave } from "react-icons/io";
+import { MdAddToPhotos } from "react-icons/md";
 let handingStyle = {
   backgroundColor: "red",
   color: "#fff",
@@ -116,7 +117,13 @@ function Content() {
         value={text}
         onChange={handleOnchange}
       ></input>
-      <button onClick={handleAddorSave}>{isEdit ? "Save" : "Add"}</button>
+      <button onClick={handleAddorSave}>
+        {isEdit ? (
+          <IoMdSave color="green" />
+        ) : (
+          <MdAddToPhotos color="lightblue" />
+        )}
+      </button>
       <ul>
         {items.map((item) => {
           return (
