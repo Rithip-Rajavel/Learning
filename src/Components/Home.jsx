@@ -4,6 +4,7 @@ const Home = () => {
   const user = "Rithip";
   return (
     <div>
+      <h1>Show from HomePage</h1>
       <ol>
         <li>
           <Link to="/">Home</Link>

@@ -6,11 +6,13 @@ import Products from "./Components/Products";
 import ProductList from "./Components/ProductList";
 import ProductDetail from "./Components/ProductDetail";
 import Todoapp from "./Components/Todoapp";
+import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
+  const user = "Rithip";
   const [products, setProducts] = useState([
     {
       id: 1,
@@ -35,6 +37,23 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <ol>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/products">Products</Link>
+          </li>
+          <li>
+            <Link to={`/login/${user}`}>Login</Link>
+          </li>
+          <li>
+            <Link to="/signup">SignUp</Link>
+          </li>
+          <li>
+            <Link to="/todo">TodoList</Link>
+          </li>
+        </ol>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products products={products} />}>
