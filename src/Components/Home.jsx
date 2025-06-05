@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-
+import NavBar from "./NavBar";
 const Home = () => {
   const user = "Rithip";
   return (
     <div>
       <h1>Show from HomePage</h1>
-      <ol>
+      {/* <ol>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -22,6 +22,7 @@ const Home = () => {
           <Link to="/todo">TodoList</Link>
         </li>
       </ol>
+      <NavBar /> */}
     </div>
   );
 };
