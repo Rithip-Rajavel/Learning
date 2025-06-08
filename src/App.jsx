@@ -11,6 +11,8 @@ import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./Components/NavBar";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
+import NewProduct from "./Components/NewProduct";
+import UpdateProduct from "./Components/UpdateProduct";
 
 function App() {
   const user = "Rithip";
@@ -50,6 +52,8 @@ function App() {
               element={<ProductDetail products={products} />}
             />
           </Route>
+          <Route path="/newProduct" element={<NewProduct />} />
+          <Route path="/updateProduct/:id" element={<UpdateProduct />} />
           <Route path="/login/:newUser" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/todo" element={<Todoapp />} />
