@@ -6,6 +6,7 @@ import Products from "./Components/Products";
 import ProductList from "./Components/ProductList";
 import ProductDetail from "./Components/ProductDetail";
 import Todoapp from "./Components/Todoapp";
+import NotFound from "./Components/NotFound";
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./Components/NavBar";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -52,6 +53,7 @@ function App() {
           <Route path="/login/:newUser" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/todo" element={<Todoapp />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

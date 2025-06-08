@@ -13,6 +13,19 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.Products {
+  width: 95vw;
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.product {
+  flex-grow: 1;
+}
 /* a {
   font-weight: 500;
   color: #646cff;
