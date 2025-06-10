@@ -4,9 +4,11 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { MdShoppingCart } from "react-icons/md";
 
 function NavBar() {
+  const navigate = useNavigate();
   const user = "Rithip";
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -35,6 +37,15 @@ function NavBar() {
             </Nav.Link>
           </Nav>
           <Form className="d-flex">
+            <Button
+              varient="contained"
+              color="warning"
+              onClick={() => {
+                navigate("/wishlist");
+              }}
+            >
+              <MdShoppingCart />
+            </Button>
             <Form.Control
               type="search"
               placeholder="Search"

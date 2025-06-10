@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useState } from "react";
 import NewProduct from "./Components/NewProduct";
 import UpdateProduct from "./Components/UpdateProduct";
+import WishList from "./Components/WishList";
 
 function App() {
   const user = "Rithip";
@@ -58,6 +59,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/todo" element={<Todoapp />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/wishlist" element={<WishList />} />
         </Routes>
       </BrowserRouter>
     </div>

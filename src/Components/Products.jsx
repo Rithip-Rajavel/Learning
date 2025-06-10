@@ -13,6 +13,8 @@ import { FaEdit } from "react-icons/fa";
 import { MdFolderDelete } from "react-icons/md";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useDispatch } from "react-redux";
+import { addItem } from "../Store/cartSlice";
 
 const Products = ({ products }) => {
   let navigate = useNavigate();
@@ -63,6 +65,15 @@ const Products = ({ products }) => {
     setData(newProductList);
   };
   //console.log("inital Render");
+  const dispatch = useDispatch();
+  const addItemToCart = (product) => {
+    dispatch(addItem(product));
+    Swal.fire({
+      title: "Item Added Successfully",
+      icon: "success",
+      draggable: true,
+    });
+  };
   return (
     <div>
       <span>
@@ -116,7 +127,10 @@ const Products = ({ products }) => {
                   <Card.Text>
                     <h3>Price</h3>: ${product.price}
                   </Card.Text>
-                  <Button variant="primary">
+                  <Button
+                    variant="primary"
+                    onClick={() => addItemToCart(product)}
+                  >
                     <MdAddShoppingCart />
                   </Button>
                   <Button
